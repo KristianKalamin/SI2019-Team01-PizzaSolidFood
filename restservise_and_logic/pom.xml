@@ -10,14 +10,20 @@
     </parent>
     <groupId>com.psd</groupId>
     <artifactId>psf-rest</artifactId>
-    <version>0.0.1</version>
+    <version>1.1.0.BETA</version>
     <name>psf-rest</name>
     <description>Pizza Solid Food</description>
-
+    <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
+    <!-- <distributionManagement>
+            <repository>
+                <id>internal.repo</id>
+                <name>Internal repo</name>
+                <url>deploy server url</url>
+            </repository>
+        </distributionManagement>-->
     <dependencies>
 
         <dependency>
@@ -25,6 +31,12 @@
             <artifactId>spring-boot-email-core</artifactId>
             <version>0.6.3</version>
         </dependency>
+        <dependency>
+            <groupId>it.ozimov</groupId>
+            <artifactId>spring-boot-freemarker-email</artifactId>
+            <version>0.6.3</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -41,24 +53,17 @@
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2 -->
-        <!--<dependency>
-            <groupId>org.springframework.security.oauth2.client</groupId>
-            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
-       <dependency>
-            <groupId>org.springframework.security.oauth.boot</groupId>
-            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-            <version>2.1.2.RELEASE</version>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <!-- https://github.com/json-path/JsonPath -->
@@ -67,16 +72,40 @@
             <artifactId>json-path</artifactId>
             <version>2.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180813</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.8.1</version>
+        </dependency>
     </dependencies>
 
     <build>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>${project.artifactId}</finalName>
+
     </build>
 
 </project>

@@ -3,24 +3,17 @@ package com.psf.psfrest;
 import it.ozimov.springboot.mail.configuration.EnableEmailTools;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 @EnableEmailTools
-public class PsfRestApplication {
+public class PsfRestApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PsfRestApplication.class, args);
+		ConfigurableApplicationContext ctx = SpringApplication.run(PsfRestApplication.class, args);
+		Thread premium = new Thread(ctx.getBean(PremiumUsersCheck.class));
+		premium.start();
 
-		// Creating one thread which will check which users obtained enough points and making them premium users
-		ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-		// Making runnable for PremiumUsersCheck
-		Runnable runnable = new PremiumUsersCheck();
-
-		// Executing thread
-		executorService.execute(runnable);
 	}
 }

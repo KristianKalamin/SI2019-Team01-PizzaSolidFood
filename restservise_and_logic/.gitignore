@@ -1,5 +1,6 @@
 HELP.md
-/target/
+target/*
+!target/psf-rest.war
 !.mvn/wrapper/maven-wrapper.jar
 
 ### IntelliJ IDEA ###

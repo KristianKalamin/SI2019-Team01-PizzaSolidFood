@@ -1,0 +1,9 @@
+DROP TRIGGER IF EXISTS `psf_db`.`order_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `psf_db`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `psf_db`.`order_BEFORE_INSERT` BEFORE INSERT ON `order` FOR EACH ROW
+BEGIN
+	set new.date_time = curdate();
+END$$
+DELIMITER ;
