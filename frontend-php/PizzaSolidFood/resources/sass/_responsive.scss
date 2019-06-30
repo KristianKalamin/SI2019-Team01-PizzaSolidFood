@@ -4,7 +4,7 @@
     body {
         header {
             .container {
-                width: 90%;
+                width: 95%;
             }
         }
 
@@ -12,6 +12,16 @@
             .container {
                 width: 80%;
             }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    body{
+        #product-content{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 1500px;
         }
     }
 }
@@ -111,6 +121,9 @@
                 }
             }
         }
+        #product-content{
+            height: 1200px;
+        }
     }
 }
 
@@ -169,6 +182,9 @@
                 }
             }
         }
+        #product-content{
+            height: 1200px;
+        }
     }
 }
 
@@ -181,6 +197,9 @@
                     grid-template-rows: repeat(6, 1fr);
                 }
             }
+        }
+        #product-content{
+            height: 1200px;
         }
     }
 }

@@ -32,7 +32,7 @@
     <section id="register-content">
     <form action="" method="">
         <div class="icon"></div>
-        <input type="submit" value="Sign up with Google">
+        <a class="gmail-btn" href="{{ url('/google') }}">Sign up with Google</a>
     </form>
     </section>
 

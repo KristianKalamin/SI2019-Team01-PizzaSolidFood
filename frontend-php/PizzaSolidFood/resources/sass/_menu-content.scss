@@ -47,8 +47,7 @@ body{
 
             .menu {
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: repeat(3, 1fr);
                 grid-gap: 30px;
 
                 article {
@@ -75,7 +74,7 @@ body{
                         color: white;
                     }
 
-                    input[type="button"] {
+                    .order-btn {
                         position: absolute;
                         bottom: 0px;
                         width: 100%;
@@ -87,11 +86,15 @@ body{
                         font-weight: 300;
                         cursor: pointer;
                         font-size: 25px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        line-height: 50px;
+                        text-align: center;
                         border: 2px solid $custom-yellow;
                         transition: 0.5s;
                         border-radius: 5px;
                     }
-                    input[type="button"]:hover{
+                    .order-btn:hover{
                         background-color: $custom-yellow;
                         color: white;
                         

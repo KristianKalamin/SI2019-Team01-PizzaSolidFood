@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed">
         <div class="container c2r1">
             <div class="title">
                 <img src="icon/pizza.svg" height="40px" width="40px">
@@ -26,7 +26,21 @@
                     <li><a href="#gallery-content">Gallery</a></li>
                     <li><a href="#our-story">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="{{ url('/signup') }}" class="sign-up">Sign Up</a></li>
+                    <li><a href="
+                    
+                    @if(Session::get('status') == 'Logged')
+                    {{ url('/profile')}}
+                    @else
+                    {{ url('/signup') }}
+                    @endif
+                    
+                    "class="sign-up">
+                    @if(Session::get('status') == 'Logged')
+                    {{ Session::get('userName') }} {{ Session::get('lastName') }}
+                    @else
+                    Sign Up
+                    @endif
+                    </a></li>
                 </ul>
                 <div class="menu-trigger"><i class="fas fa-bars"></i></div>
             </nav>
@@ -95,42 +109,21 @@
                 <h2>MENU</h2>    
             </div>
             <div class="menu">
-                <article>
-                    <img src="../img/menu/1.jpg" alt="pizza image">
-                    <h2>Quattro Stagioni</h2>
-                    <p>tomato sauce <br> mozzarella <br> ham <br> black olives <br> mushrooms <br> artichoke peas <br> salami <br> eggs</p>
-                    <input type="button" value="Order">
-                </article>
-                <article>
-                    <img src="../img/menu/2.jpg" alt="pizza image">
-                    <h2>Margherita</h2>
-                    <p>sliced buffalo <br> mozzarella from Campania<br> basil <br> extra virgin <br> olive oil </p>
-                    <input type="button" value="Order">
-                </article>
-                <article>
-                    <img src="../img/menu/3.jpg" alt="pizza image">
-                    <h2>Hawaii</h2>
-                    <p>ham <br> pineapple </p>
-                    <input type="button" value="Order">
-                </article>
-                <article>
-                    <img src="../img/menu/4.jpg" alt="pizza image">
-                    <h2>Garlic Fingers</h2>
-                    <p>melted butter <br> garlic <br> bacon </p>
-                    <input type="button" value="Order">
-                </article>
-                <article>
-                    <img src="../img/menu/5.jpg" alt="pizza image">
-                    <h2>Meat Feast</h2>
-                    <p>tomato sauce <br> mozzarella <br> minced meat <br> Maltese sausage <br> other meat </p>
-                    <input type="button" value="Order">
-                </article>
-                <article>
-                    <img src="../img/menu/6.jpg" alt="pizza image">
-                    <h2>Peperoni</h2>
-                    <p>tomato sauce <br> mozzarella <br> peperoni </p>
-                    <input type="button" value="Order">
-                </article>
+                @if(count($pizza) > 1)
+                    @foreach($pizza as $pizzas)
+                        <article>
+                            @php $filename = $pizzas['productName'] . '.jpg' @endphp
+                            
+                            <img src="{{ asset('storage/' .$filename) }}" alt="pizza image">
+                            <h2> {{ $pizzas['productName'] }} </h2>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <a class="order-btn" href=" {{ url('/product/' .$pizzas['idProd']) }}">Order</a>
+                        </article>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

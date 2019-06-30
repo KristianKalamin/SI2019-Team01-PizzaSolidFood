@@ -1,24 +1,29 @@
 
 
 body {
-    
+
+
+    header.fixed{
+        position: fixed;
+    }
+
     
     header {
         background-color: white;
         width: 100%;
-        position: fixed;
         z-index: 10000;
+        border-bottom: 1px solid rgb(187, 187, 187);
         -webkit-box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.75);
         box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.75);
         .container {
-            width: 70%;
+            width: 95%;
             margin: auto;
         }
 
         .c2r1 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 30% 70%;
             grid-template-rows: 1fr;
             height: 70px;
 

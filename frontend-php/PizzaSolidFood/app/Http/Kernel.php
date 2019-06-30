@@ -40,6 +40,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+            'http://localhost:8080/psf-rest/auth/login'
         ],
     ];
 

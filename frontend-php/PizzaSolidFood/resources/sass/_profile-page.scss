@@ -1,5 +1,5 @@
 body{
-    #register-content{
+    #profile-content{
         width: 100%;
         height: 100vh;
         background-color: $custom-lighter-grey;
@@ -7,29 +7,50 @@ body{
         grid-template-rows: 1fr;
         justify-content: center;
         align-items: center;
-        form{
+        .profile{
             background-color: white;
             width: 400px;
-            padding: 60px 0px 60px 0px;
+            padding: 40px 0px 40px 0px;
             -webkit-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.4);
             -moz-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.4);
             box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.4);     
             *{
-                margin: 20px auto 20px auto;
+                margin: 5px auto 5px auto;
+            }
+            .info{
+                margin: 30px 0px 30px;
+                .info-block{
+                    width: 90%;
+                    height: 50px;
+                    color: $custom-grey;
+                    background-color: $custom-lighter-grey2;
+                    padding: 0px 10px 0px 10px;
+                    border-radius: 10px;
+                    
+                }
             }
             .icon{
                 height: 120px;
                 width: 120px;
-                background-image: url(/../img/gmail.svg); 
+                background-image: url(/../img/user.svg); 
             }
-            .gmail-btn{
+            h2{
+                width: 100%;
+                text-align: center;
+                color: $custom-grey;
+            }
+            h5{
+                line-height: 50px;
+            }
+
+            .sign-out{
                 text-align: center;
                 line-height: 40px;  
                 text-decoration: none;
                 margin-top: 40px;
                 width: 200px;
                 height: 40px;
-                background-color: $google-blue;
+                background-color: $custom-yellow-darker;
                 border-radius: 5px;
                 border: none;
                 color: white;
@@ -37,16 +58,9 @@ body{
                 font-size: 15px;
                 font-weight: bold;
                 display: block;
-                -webkit-box-shadow: 4px 3px 3px -2px rgba(0,0,0,0.4);
-                -moz-box-shadow: 4px 3px 3px -2px rgba(0,0,0,0.4);
-                box-shadow: 4px 3px 3px -2px rgba(0,0,0,0.4);
                 transition: 0.5s;
             }
-            .gmail-btn:hover{
-                background-color: white;
-                color: $google-grey;
-                border: 1px solid $google-grey;
-            }
+            
         }
     }
 }
