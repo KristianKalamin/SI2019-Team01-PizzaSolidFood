@@ -10,7 +10,7 @@ Kreiranje baze podataka (MySQL) – Stored Procedure, Views, Triggers, Transacti
 
 # IZMENE U STRUKTURI I ORGANIZACIJI PROJEKTA NA OSNOVU DOGOVORA TIMA SA PREDMETNIM NASTAVNIKOM
 
-Pošto je student **Kalamin Mihai Kristian – SI 04/16** - [@KristianKalamin](https://github.com/KristianKalamin "@KristianKalamin") završio njegov deo projekta i izrazio želju da u Julskom ispitnom roku 2019. godine izađe na ispit iz predmeta **Razvoj softvera otvorenog koda**, uz saglasnost tima, koji na spomenuti ispit planiraju da izađu u Septembarskom ili Oktobarskom ispitnom roku 2019. godine i još uvek nisu završili njihov deo projekta, dogovoreno je da spomenuti student njegov deo projekta nadogradi odgovarajućim elementima kako bi samostalno, u formi izvedenog (FORK-ovanog) projekta realizovao isti i ispunio predispitnu obavezu koja mu omogućava izlazak na spomenuti ispit.
+Pošto je student **Kalamin Mihai Kristian – SI 04/16** - [@KristianKalamin](https://github.com/KristianKalamin "@KristianKalamin") završio njegov deo projekta i izrazio želju da u Julskom ispitnom roku 2019. godine izađe na ispit iz predmeta **Razvoj softvera otvorenog koda**, **uz saglasnost tima**, koji na spomenuti ispit planiraju da izađu u Septembarskom ili Oktobarskom ispitnom roku 2019. godine i još uvek nisu završili njihov deo projekta, dogovoreno je da spomenuti student njegov deo projekta nadogradi odgovarajućim elementima kako bi samostalno, u formi izvedenog (FORK-ovanog) projekta ispunio sve mandatorne elemente koje nalaže specifikacija seminarskog rada i tako ispunio sve preduslove za realizaciju predispitne obaveze koja studentu omogućava izlazak na spomenuti ispit.
 
 Shodno izloženom, **odobreno je restruktuiranje projekta i samog repozitorijuma**.
 
