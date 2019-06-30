@@ -6,21 +6,4 @@ Projekat iz predmeta “Razvoj softvera otvorenog koda”, naziv rada jeste “P
 
 Kreiranje baze podataka (MySQL) – Stored Procedure, Views, Triggers, Transactions - svi članovi tima.
 
-<hr/>
-
-# IZMENE U STRUKTURI I ORGANIZACIJI PROJEKTA NA OSNOVU DOGOVORA TIMA SA PREDMETNIM NASTAVNIKOM
-
-Shodno dogovoru tima, studentu **Kalamin Mihai Kristian – SI 04/16** - [@KristianKalamin](https://github.com/KristianKalamin "@KristianKalamin") je FORK-ovan spomenuti repozitorijum kako bi njegov završeni deo projekta dopinio kako bi se isti smatrao završenim projektom i samostalno ispunio specifikaciju seminarskog rada za predmet **Razvoj softvera otvorenog koda**. FORK-ovani repozitorijum i projekat spomenutog studenta se nalazi na sledećem linku ( https://github.com/ppecev/SI2019-Team01-PizzaSolidFood )
-
-Na osnovu zahteva studenta **Ilija Agbaba – SI 22/16** - [@IlijaAgbaba](https://github.com/IlijaAgbaba "@IlijaAgbaba") tim odustaje od razvoja Android dela aplikacije, a spomenutom studentu su dodeljeni sledeći zadaci u razvoju aplikacije :
-- Izrada chatbot-a
-- Formiranje izgleda e-mail-a prilikom porudžbine, dobijanja i gubljenja premium naloga
-
-Shodno izloženom, **odobreno je restruktuiranje projekta i samog repozitorijuma**.
-
-doc. dr Predrag Pecev <br/>
-pecev@tfzr.uns.ac.rs
-
-**30.06.2019.**
-
 
