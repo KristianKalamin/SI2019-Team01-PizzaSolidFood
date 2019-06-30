@@ -26,6 +26,7 @@
         </distributionManagement>-->
     <dependencies>
 
+        <!-- https://github.com/ozimov/spring-boot-email-tools -->
         <dependency>
             <groupId>it.ozimov</groupId>
             <artifactId>spring-boot-email-core</artifactId>
