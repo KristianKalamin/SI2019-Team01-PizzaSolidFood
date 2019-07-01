@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface IProductsService {
     List<Products> getAllProducts();
-    Products getProduct(int productName);
+    Products getProduct(String productName);
 }

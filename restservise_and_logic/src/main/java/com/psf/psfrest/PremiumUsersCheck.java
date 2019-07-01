@@ -42,29 +42,33 @@ public class PremiumUsersCheck implements Runnable {
 
     @Override
     public void run() {
-        if (!list.isEmpty())
-            list.clear();
-        else {
-            list.addAll(userService.getAllUsers());
-            checkDate();
-            if (isNewMonth) {
-                try {
-                    resetUser();
-                } catch (CannotSendEmailException | IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                try {
-                    givePremiumAccount();
-                } catch (CannotSendEmailException | IOException e) {
-                    e.printStackTrace();
+        while (true) {
+            System.out.println("THREAD RUN");
+            if (!list.isEmpty())
+                list.clear();
+            else {
+                System.out.println("THREAD RUN");
+                list.addAll(userService.getAllUsers());
+                checkDate();
+                if (isNewMonth) {
+                    try {
+                        resetUser();
+                    } catch (CannotSendEmailException | IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        givePremiumAccount();
+                    } catch (CannotSendEmailException | IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-        }
-        try {
-            Thread.sleep(premiumUsersCheckInterval * 60000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            try {
+                Thread.sleep(premiumUsersCheckInterval * 60000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

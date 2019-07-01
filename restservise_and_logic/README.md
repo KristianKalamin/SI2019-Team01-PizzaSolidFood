@@ -82,7 +82,7 @@ Returns:
 
 **METHOD:** "GET"
 
-Params: ```int productId ```
+Params: ```String productName ```
 
 Returns:
 ```json
