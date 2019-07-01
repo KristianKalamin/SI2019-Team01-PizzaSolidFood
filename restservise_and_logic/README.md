@@ -157,7 +157,7 @@ Returns: ```void```
 
 ### */auth/order*
 
-**METHOD:** "GET"
+**METHOD:** "POST"
 
 headers: Authorization Bearer Token
 

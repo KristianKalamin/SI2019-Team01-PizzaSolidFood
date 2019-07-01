@@ -1,57 +1,76 @@
 
-var additions;
+$(document).ready(function () {
+    $("#addition").click(function () {
+        var x = $("#add option:selected").val();
+        var price = 0;
+        var newPrice = 0;
+        price = productPrice;
+        var add = additions.find(obj => {
+            return obj.additionName === x;
+        });
 
-$.ajax({
-    type: "GET",
-    url: "http://localhost:8080/public/product/" + getProductNameFromURL() + "",
-    dataType: "json",
-    success: function (product) {
-        $("body > .container > .row > .col-lg-9 > .card.mt-4").append(
+        if (x == "none") {
+            newPrice = parseFloat(price);
+        } else {
+            newPrice = parseFloat(price) + parseFloat(add.additionPrice);
+        }
 
-            "<img class=\"card-img-top img-fluid\" src=\"" + decodeBase64(product.image) + "\">" +
-            "<div class=\"card-body\">" +
-            " <h3 class=\"card-title\">" + product.productName + "</h3>" +
-            "<h4> Pizza size: " + product.productSize + "cm</h4>" + infoForPremium(product) +
-            "<h4> Pizza price: €" + product.productPrice + "</h4>" +
-            "<p class=\"card-text\">" + product.productDescription + "</p>" +
-            "</div>"
-        );
-    }
+        $("#price").text("Pizza price: €" + newPrice);
+    });
+
+
+    $("#btnOrderOne").click(function (e) {
+        $(this).fadeOut("slow");
+        setTimeout(function () {
+            $("#address").fadeIn("slow");
+        }, 500);
+
+    });
+
 });
 
 
-function infoForPremium(product) {
-    if (getCookie("userType") == 1)
-        return "";
-    else {
-        var discount = "<h4> Discount for premium users: " + product.discountForPremiumUsers + "%</h4> <h4>Additions: ";
-        additions = getAdditions();
-        var add = "<select name=\"additions\">";
-        console.log(additions);
-        additions.forEach(addition => {
-            add += "<option value=" + addition.additionName + ">" + addition.additionName + "</option>";
-        });
+function orderProduct() {
+    var address = $("#addressInput").val();
 
-        add += "</select></h4>";
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/public/address",
+        data: "userAddress=" + address,
+        dataType: "json",
+        success: function (response) {/* none */ }
+    });
 
-        return discount + add;
+    var authToken = getCookie("token");
+    var orderNum = getRandomNumber(10000, 99999);
+    var userMail = getCookie("userEmail");
+    var payment = $('input[name=payment]:checked').val();
+    var quantity = $('#quantity').val();
+    var product = $("h3").text();
+    var op = $("#options:selected").val();
+
+    if (op == 'none') {
+        op = "";
     }
 
-}
+    var order = {
+        mail: userMail,
+        productName: product,
+        payment: payment,
+        quantity: quantity,
+        orderNum: orderNum,
+        additionName: op
+    };
 
-function getAdditions() {
-    return $.ajax({
+    $.ajax({
         type: "POST",
-        url: "http://localhost:8080/public/additions",
-        async: false,
-        dataType: "json",
-
-    }).responseJSON;
-
-}
-
-
-function order() {
-    
+        contentType: "application/json",
+        url: "http://localhost:8080/auth/order",
+        headers: { "Authorization": "Bearer " + authToken, },
+        data: JSON.stringify(order),
+        success: function (response) {
+            /*none*/
+        }
+    });
 }
 

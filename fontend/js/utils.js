@@ -10,11 +10,6 @@ function decodeBase64(base64String) {
     return image.src;
 }
 
-function decodeBase64(base64String) {
-    var image = new Image();
-    image.src = 'data:image/png;base64,' + base64String;
-    return image.src;
-}
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
@@ -67,3 +62,7 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
