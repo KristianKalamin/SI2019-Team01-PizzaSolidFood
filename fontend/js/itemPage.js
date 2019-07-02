@@ -44,10 +44,11 @@ function orderProduct() {
     var authToken = getCookie("token");
     var orderNum = getRandomNumber(10000, 99999);
     var userMail = getCookie("userEmail");
+    var userType = getCookie("userType");
     var payment = $('input[name=payment]:checked').val();
     var quantity = $('#quantity').val();
     var product = $("h3").text();
-    var op = $("#options:selected").val();
+    var op = $("#add option:selected").val();
 
     if (op == 'none') {
         op = "";
@@ -55,6 +56,7 @@ function orderProduct() {
 
     var order = {
         mail: userMail,
+        userType: userType,
         productName: product,
         payment: payment,
         quantity: quantity,

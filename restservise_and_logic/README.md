@@ -169,7 +169,8 @@ JSON Body
 ```json
 [
     {
-      "mail": "joh.doe@gmail.com"
+      "mail": "joh.doe@gmail.com",
+      "userType": 0 or 1,
       "productName": "Margherita",
       "payment": "paypal",
       "quantity": 1,
