@@ -5,16 +5,15 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Shop Item - Start Bootstrap Template</title>
+  <meta name="google-signin-client_id"
+    content="51577597659-rfksc3t05cegn3jq7pta6jm42d0qsl0e.apps.googleusercontent.com">
+  <title>New Pizza Solid Food</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/shop-item.css" rel="stylesheet">
+  <link href="css/item.css" rel="stylesheet">
 
 </head>
 
@@ -24,21 +23,25 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">New Pizza Solid Food</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login In with Google</a>
+            <div class="g-signin2" data-onsuccess="onSignIn" id="googleBtn"></div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="signOut();">Sign out</a>
           </li>
         </ul>
       </div>
@@ -53,26 +56,31 @@
       <div class="col-lg-9">
 
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
-          <div class="card-body">
-            <h3 class="card-title">Product Name</h3>
-            <h4>$24.99</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-           
-          </div>
+
         </div>
         <!-- /.card -->
 
-        <div class="card card-outline-secondary my-4">
-            <a href="#" class="btn btn-success">Leave a Review</a>
-          </div>
+        <div class="card card-outline-secondary my-4" id="btnOrderOne">
+          <a class="btn btn-success" style="color: white;">Order</a>
         </div>
-        <!-- /.card -->
-
+        <div id="address" style="background-color: rgb(243, 243, 243); padding: 10px; display: none;">
+          <h5>Please enter delivery address: <input type="text" id="addressInput"></h5><br>
+          <h5>Choose payment method:</h5>
+          <form style="margin-bottom: 20px;" id="paymentForm">
+            <input type="radio" name="payment" value="paypal"> PayPal<br>
+            <input type="radio" name="payment" value="master-card"> Master Card<br>
+            <input type="radio" name="payment" value="on-delivery"> On Delivery<br>
+            <a onclick="orderProduct();" class="btn btn-success" style="margin-top: 10px; color: white;">Order</a>
+          </form>
+        </div>
       </div>
-      <!-- /.col-lg-9 -->
+
+      <!-- /.card -->
 
     </div>
+    <!-- /.col-lg-9 -->
+
+  </div>
 
   </div>
   <!-- /.container -->
@@ -80,7 +88,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; New Pizza Solid Food 2019</p>
     </div>
     <!-- /.container -->
   </footer>
@@ -88,6 +96,9 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/utils.js"></script>
+  <script src="js/loadContent.js"></script>
   <script src="js/itemPage.js"></script>
 </body>
 

@@ -21,7 +21,7 @@ public class ProductsService implements IProductsService{
     }
 
     @Override
-    public Products getProduct(int productId) {
-        return productsRepository.findByIdProdEquals(productId);
+    public Products getProduct(String productName) {
+        return productsRepository.findByProductNameEquals(productName);
     }
 }

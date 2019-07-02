@@ -12,6 +12,8 @@
         <th>Product Price (€)</th>
         <#if userType == true>
             <th>Discount (%)</th>
+            <th>Addition</th>
+            <th>Addition price</th>
         </#if>
     </tr>
     <#list products as product>
@@ -21,6 +23,8 @@
             <td>${product.productPrice}</td>
             <#if userType == true>
                 <td>${product.discount}</td>
+                <td>${product.addName}</td>
+                <td>${product.addPrice}</td>
             </#if>
         </tr>
     </#list>

@@ -76,4 +76,18 @@ public class OrderDetails {
     public void setAdditionName(String additionName) {
         this.additionName = additionName;
     }
+
+    @Override
+    public String toString() {
+        return "OrderDetails{" +
+                "id=" + id +
+                ", mail='" + mail + '\'' +
+                ", userType=" + userType +
+                ", productName='" + productName + '\'' +
+                ", payment='" + payment + '\'' +
+                ", quantity=" + quantity +
+                ", orderNum=" + orderNum +
+                ", additionName='" + additionName + '\'' +
+                '}';
+    }
 }

@@ -44,11 +44,4 @@ public class AuthenticationController {
             return ResponseEntity.ok(psfUser);
         }
     }
-
-    @PostMapping("/auth/logout/")
-    public RedirectView logoutUser() {
-
-        return new RedirectView("https://mail.google.com/mail/logout?hl=en");
-    }
-
 }

@@ -82,7 +82,7 @@ Returns:
 
 **METHOD:** "GET"
 
-Params: ```int productId ```
+Params: ```String productName ```
 
 Returns:
 ```json
@@ -157,7 +157,7 @@ Returns: ```void```
 
 ### */auth/order*
 
-**METHOD:** "GET"
+**METHOD:** "POST"
 
 headers: Authorization Bearer Token
 
@@ -169,7 +169,8 @@ JSON Body
 ```json
 [
     {
-      "mail": "joh.doe@gmail.com"
+      "mail": "joh.doe@gmail.com",
+      "userType": 0 or 1,
       "productName": "Margherita",
       "payment": "paypal",
       "quantity": 1,

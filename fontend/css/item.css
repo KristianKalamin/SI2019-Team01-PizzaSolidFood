@@ -6,3 +6,9 @@
 body {
   padding-top: 56px;
 }
+a {
+  color: white;
+}
+#googleBtn {
+  margin-top: 4px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id"
+        content="51577597659-rfksc3t05cegn3jq7pta6jm42d0qsl0e.apps.googleusercontent.com">
+
+    <title>New Pizza Solid Food</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/contact.css" rel="stylesheet">
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">New Pizza Solid Food</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html" onclick="userAction()">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="g-signin2" data-onsuccess="onSignIn" id="googleBtn"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="signOut();">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h2>Contact Us</h2>
+    <form action="http://localhost:8080/public/contact" method="GET" id="contactForm">
+        <div id="text">Subject:</div>
+        <input type="text" name="subject"> <br>
+        <div id="text">Name:</div>
+        <input type="text" name="name"> <br>
+        <div id="email">Mail:</div>
+        <input type="text" name="customerMail"> <br>
+        <div id="text">Message:</div>
+    </form>
+    <textarea name="msg" form="contactForm"></textarea><br>
+    <input type="submit" value="Send" form="contactForm" id="submitBtn">
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; New Pizza Solid Food 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>
+
+</html>

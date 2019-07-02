@@ -26,27 +26,28 @@ public class OrderController {
     @GetMapping("/public/address")
     public @ResponseBody void setAddress(@RequestParam(name = "userAddress") String userAddress) {
         this.address = userAddress;
+        System.out.println(this.address);
     }
 
-    @GetMapping("/auth/order")
-    public @ResponseBody void order(@RequestBody List<OrderDetails> orderDetails) throws IOException, CannotSendEmailException {
+    @PostMapping("/auth/order")
+    public @ResponseBody void order(@RequestBody OrderDetails orderDetails) throws IOException, CannotSendEmailException {
 
-        for (OrderDetails orderDetail : orderDetails) {
-            orderService.init(
-                    orderDetail.getMail(),
-                    orderDetail.getProductName(),
-                    orderDetail.getPayment(),
-                    orderDetail.getQuantity(),
-                    orderDetail.getOrderNum(),
-                    orderDetail.getAdditionName()
-            );
+        System.out.println(orderDetails.toString());
+        orderService.init(
+                orderDetails.getMail(),
+                orderDetails.getProductName(),
+                orderDetails.getPayment(),
+                orderDetails.getQuantity(),
+                orderDetails.getOrderNum(),
+                orderDetails.getAdditionName()
+        );
 
-           orderService.addProductToOrder();
-           if (orderDetail.getUserType() == 1 && !orderDetail.getAdditionName().equals(""))
-               orderService.addAdditionsToOrder();
+        orderService.addProductToOrder();
+        if (orderDetails.getUserType() == 1 && !orderDetails.getAdditionName().equals("null"))
+            orderService.addAdditionsToOrder();
 
-        }
+
         orderService.completeOrder();
-        mail.sendBillEmail(orderDetails.get(0).getMail(), orderDetails.get(0).getOrderNum(), this.address);
+        mail.sendBillEmail(orderDetails.getMail(), orderDetails.getOrderNum(), this.address);
     }
 }

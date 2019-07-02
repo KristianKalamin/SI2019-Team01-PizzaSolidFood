@@ -5,16 +5,15 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="google-signin-client_id" content="51577597659-rfksc3t05cegn3jq7pta6jm42d0qsl0e.apps.googleusercontent.com">
-  <title>Shop Homepage - Start Bootstrap Template</title>
+  <meta name="google-signin-client_id"
+    content="51577597659-rfksc3t05cegn3jq7pta6jm42d0qsl0e.apps.googleusercontent.com">
+  <title>New Pizza Solid Food</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/shop-homepage.css" rel="stylesheet">
+  <link href="css/homepage.css" rel="stylesheet">
 
 </head>
 
@@ -24,27 +23,25 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">New Pizza Solid Food</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="userAction()">Home
+            <a class="nav-link" href="index.html" onclick="userAction()">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <div  class="g-signin2" data-onsuccess="onSignIn" id="googleBtn"></div>
           </li>
-          <li class="nav-item">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-          </li>
-          <li class="nav-item">
-            <a href="#" onclick="signOut();">Sign out</a>
+          <li class="nav-item" id="signout">
+            <a class="nav-link" href="#" onclick="signOut();">Sign out</a>
           </li>
         </ul>
       </div>
@@ -111,6 +108,7 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/utils.js"></script>
   <script src="js/mainPage.js"></script>
 </body>
 
