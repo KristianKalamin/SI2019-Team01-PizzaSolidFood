@@ -60,7 +60,7 @@ CREATE TABLE `order` (
   UNIQUE KEY `ID_ORDER` (`ID_ORDER`),
   KEY `fk_order_products1_idx` (`products_ID_PROD`),
   CONSTRAINT `fk_order_products1` FOREIGN KEY (`products_ID_PROD`) REFERENCES `products` (`ID_PROD`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,6 +69,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` VALUES (1,12.35,'2019-07-01 00:00:00','paypal',1,96270,1),(2,12.35,'2019-07-01 00:00:00','paypal',1,95227,1),(3,12.35,'2019-07-01 00:00:00','paypal',1,84570,1),(4,15.99,'2019-07-01 00:00:00','paypal',1,82479,2),(5,47.97,'2019-07-01 00:00:00','paypal',3,34330,2),(6,15.99,'2019-07-02 00:00:00','master-card',1,98455,2),(7,15.99,'2019-07-02 00:00:00','master-card',1,96116,2),(8,4.99,'2019-07-02 00:00:00','paypal',1,22554,2),(9,4.99,'2019-07-02 00:00:00','paypal',1,18596,2),(10,4.99,'2019-07-02 00:00:00','paypal',1,19664,2),(11,4.99,'2019-07-02 00:00:00','paypal',1,27241,2),(12,4.99,'2019-07-02 00:00:00','paypal',1,58144,2),(13,4.99,'2019-07-02 00:00:00','paypal',1,16450,2),(14,16.99,'2019-07-02 00:00:00','master-card',1,59681,3),(15,16.99,'2019-07-02 00:00:00','master-card',1,30828,3),(16,16.99,'2019-07-02 00:00:00','master-card',1,77712,3),(17,16.99,'2019-07-02 00:00:00','master-card',1,92194,3),(18,16.99,'2019-07-02 00:00:00','master-card',1,67953,3),(19,16.99,'2019-07-02 00:00:00','master-card',1,27823,3),(20,4.99,'2019-07-02 00:00:00','paypal',1,38784,2),(21,10.35,'2019-07-02 00:00:00','paypal',1,32396,1),(22,10.35,'2019-07-02 00:00:00','paypal',1,24579,1),(23,10.35,'2019-07-02 00:00:00','on-delivery',1,76181,1),(24,10.35,'2019-07-02 00:00:00','paypal',1,86432,1);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -115,6 +116,7 @@ CREATE TABLE `order_has_additions` (
 
 LOCK TABLES `order_has_additions` WRITE;
 /*!40000 ALTER TABLE `order_has_additions` DISABLE KEYS */;
+INSERT INTO `order_has_additions` VALUES (22,1,1),(24,1,1);
 /*!40000 ALTER TABLE `order_has_additions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,9 +181,8 @@ CREATE TABLE `orders` (
   `TOTAL_PRICE` double(9,2) NOT NULL,
   `ORDERS_ORDER_NUM` int(11) NOT NULL,
   PRIMARY KEY (`ID_ORDERS`,`users_ID_USER`),
-  UNIQUE KEY `ID_ORDERS` (`ID_ORDERS`),
-  UNIQUE KEY `TOTAL_PRICE_UNIQUE` (`TOTAL_PRICE`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  UNIQUE KEY `ID_ORDERS` (`ID_ORDERS`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,6 +191,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,5,12.35,96270),(3,5,12.35,84570),(4,5,15.99,82479),(5,5,47.97,34330),(6,5,15.99,98455),(7,5,15.99,96116),(8,5,4.99,22554),(9,5,4.99,18596),(10,5,4.99,19664),(11,5,4.99,27241),(12,5,4.99,58144),(13,5,4.99,16450),(14,5,16.99,59681),(15,5,16.99,30828),(16,5,16.99,77712),(17,5,16.99,92194),(18,5,16.99,67953),(19,5,4.99,38784),(21,5,10.85,24579),(22,5,10.85,86432);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +252,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Mihal','Kalamin',5,'kalamin.michal@gmail.com',0,NULL,6,22);
+INSERT INTO `users` VALUES ('Mihal','Kalamin',5,'kalamin.michal@gmail.com',1,NULL,0,16);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -446,4 +448,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-22 16:59:27
+-- Dump completed on 2019-07-02 16:26:37
