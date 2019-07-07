@@ -28,6 +28,6 @@ Studentu koji je radio na navedenom projektu je onemogućen dalji rad na ovom re
 doc. dr Predrag Pecev <br/>
 pecev@tfzr.uns.ac.rs
 
-**04.07.2018.**
+**04.07.2019.**
 
 
