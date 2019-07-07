@@ -19,4 +19,15 @@ pecev@tfzr.uns.ac.rs
 
 **30.06.2019.**
 
+<hr/>
+
+# PROJEKAT JE USPEŠNO REALIZOVAN I ODBRANJEN
+
+Studentu koji je radio na navedenom projektu je onemogućen dalji rad na ovom repozitorijumu koji sada služi kao arhiva uspešno realizovanog projekta. **Projekat je evaluiran sa 40 od maksimalnih 40 bodova**. Detaljna evaluacija projekta i rada studenta nalazi se na wiki stranici projekta [9. Evaluacija projekta i članova tima](https://github.com/KristianKalamin/SI2019-Team01-PizzaSolidFood/wiki/9.-Evaluacija-projekta-i-%C4%8Dlanova-tima "9. Evaluacija projekta i članova tima")
+
+doc. dr Predrag Pecev <br/>
+pecev@tfzr.uns.ac.rs
+
+**04.07.2018.**
+
 
